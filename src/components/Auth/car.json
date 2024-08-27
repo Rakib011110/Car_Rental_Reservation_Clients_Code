@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Tesla Model S",
+    "description": "A luxury electric sedan with advanced autopilot features.",
+    "color": "black",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "Autopilot",
+      "Long Range Battery",
+      "Premium Sound System",
+      "Heated Seats",
+      "Sunroof"
+    ],
+    "photoUrl": "https://images.squarespace-cdn.com/content/v1/6598c8e83ff0af0197ff19f9/1708570553931-J8NFK8CMOZHLWEQQDFH1/2021_Tesla-Model-S-Plaid-Nurburgring.jpg",
+    "pricePerHour": 30,
+    "isDeleted": false
+  },
+  {
+    "name": "BMW i8",
+    "description": "A hybrid sports car with a futuristic design.",
+    "color": "white",
+    "isElectric": true,
+    "status": "rented",
+    "features": [
+      "Hybrid Engine",
+      "Sport Mode",
+      "Heated Seats",
+      "Leather Interior",
+      "Premium Sound System"
+    ],
+    "photoUrl": "https://hips.hearstapps.com/autoweek/assets/s3fs-public/728009998-1_1.jpg?resize=980:*",
+    "pricePerHour": 40,
+    "isDeleted": false
+  },
+  {
+    "name": "Audi e-tron",
+    "description": "An electric SUV with spacious interior and high-tech features.",
+    "color": "blue",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "Quattro All-Wheel Drive",
+      "Long Range Battery",
+      "Heated Seats",
+      "Panoramic Sunroof",
+      "Touchscreen Display"
+    ],
+    "photoUrl": "https://cdn.motor1.com/images/mgl/R0bl9/s3/most-expensive-2022-audi-rs-e-tron-gt.webp",
+    "pricePerHour": 35,
+    "isDeleted": false
+  },
+  {
+    "name": "Nissan Leaf",
+    "description": "A compact electric car ideal for city driving.",
+    "color": "silver",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "Eco Mode",
+      "Heated Seats",
+      "Rearview Camera",
+      "Bluetooth",
+      "Cruise Control"
+    ],
+    "photoUrl": "https://images.dealer.com/autodata/us/color/2023/USD30NIS102C0/KAD.jpg?impolicy=downsize_bkpt&imdensity=1&w=520",
+    "pricePerHour": 20,
+    "isDeleted": false
+  },
+  {
+    "name": "Chevrolet Bolt EV",
+    "description": "A small electric hatchback with a long driving range.",
+    "color": "orange",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "Long Range Battery",
+      "Heated Seats",
+      "Rearview Camera",
+      "Wi-Fi Hotspot",
+      "Android Auto"
+    ],
+    "photoUrl": "https://nigeriantech.com.ng/wp-content/uploads/2022/11/The-2023-Chevrolet-Bolt-EUV-nigeriantechng.jpg",
+    "pricePerHour": 22,
+    "isDeleted": false
+  },
+  {
+    "name": "Ford Mustang Mach-E",
+    "description": "An electric SUV with sports car performance.",
+    "color": "red",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "All-Wheel Drive",
+      "Heated Seats",
+      "Panoramic Sunroof",
+      "Touchscreen Display",
+      "Adaptive Cruise Control"
+    ],
+    "photoUrl": "https://www.gpas-cache.ford.com/guid/3d7e763a-b3c4-30f3-bded-8ba99c9ffcb2.jpg",
+    "pricePerHour": 28,
+    "isDeleted": false
+  },
+  {
+    "name": "Porsche Taycan",
+    "description": "A high-performance electric sports car.",
+    "color": "white",
+    "isElectric": true,
+    "status": "rented",
+    "features": [
+      "Sport Mode",
+      "Heated Seats",
+      "Leather Interior",
+      "Premium Sound System",
+      "Touchscreen Display"
+    ],
+    "photoUrl": "https://k-auto.studio.crasman.cloud/pub/vehicles/YLZ/YLZ-145/9da52852d734da1_YLZ-145.JPG?c=system_x1080",
+    "pricePerHour": 50,
+    "isDeleted": false
+  },
+  {
+    "name": "Hyundai Kona Electric",
+    "description": "A compact electric SUV with a modern design.",
+    "color": "green",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "Long Range Battery",
+      "Heated Seats",
+      "Rearview Camera",
+      "Apple CarPlay",
+      "Wireless Charging"
+    ],
+    "photoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWilh4U7R-q5t8uWeRuKRxtG8OYWKeCiMaKA&s",
+    "pricePerHour": 25,
+    "isDeleted": false
+  },
+  {
+    "name": "Jaguar I-PACE",
+    "description": "A luxury electric SUV with a bold design.",
+    "color": "grey",
+    "isElectric": true,
+    "status": "rented",
+    "features": [
+      "All-Wheel Drive",
+      "Heated Seats",
+      "Panoramic Sunroof",
+      "Meridian Sound System",
+      "Touchscreen Display"
+    ],
+    "photoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Y4_8d0qyVNNZFe3EfbFDWf3M4dBSd0bc_4VgPmEkhQ_MIYbPyNj9M05lQM1_BU1tpfw&usqp=CAU",
+    "pricePerHour": 45,
+    "isDeleted": false
+  },
+  {
+    "name": "Kia Soul EV",
+    "description": "A quirky electric car with a unique design.",
+    "color": "yellow",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "Long Range Battery",
+      "Heated Seats",
+      "Rearview Camera",
+      "Bluetooth",
+      "Cruise Control"
+    ],
+    "photoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjFXr38oMHNoDSlTQRsGwg5CAQGgbbhqpAAw&s",
+    "pricePerHour": 18,
+    "isDeleted": false
+  },
+  {
+    "name": "Mercedes-Benz EQC",
+    "description": "A luxury electric SUV with cutting-edge technology.",
+    "color": "blue",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "All-Wheel Drive",
+      "Heated Seats",
+      "Panoramic Sunroof",
+      "MBUX Infotainment System",
+      "Adaptive Cruise Control"
+    ],
+    "photoUrl": "https://imgd.aeplcdn.com/1280x720/n/cw/ec/44579/eqc-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80",
+    "pricePerHour": 40,
+    "isDeleted": false
+  },
+  {
+    "name": "Volkswagen ID.4",
+    "description": "A practical electric SUV with a spacious interior.",
+    "color": "black",
+    "isElectric": true,
+    "status": "available",
+    "features": [
+      "Long Range Battery",
+      "Heated Seats",
+      "Rearview Camera",
+      "Touchscreen Display",
+      "Wireless Charging"
+    ],
+    "photoUrl": "https://assets.autoweek.nl/m/2mnyst4bo8e4_800.jpg",
+    "pricePerHour": 27,
+    "isDeleted": false
+  }
+]
