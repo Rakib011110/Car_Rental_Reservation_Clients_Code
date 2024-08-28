@@ -12,6 +12,8 @@ import {
   faCarSide,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Features from "./Features";
+import Logo from "../../Pages/Logo/Logo";
 
 const Banner = () => {
   const [searchParams, setSearchParams] = useState({
@@ -148,24 +150,13 @@ const Banner = () => {
           </div>
         </div>
       </div>
+      <Logo />
 
       <section className="featured-cars mb-8">
         <h2 className="text-2xl font-bold mb-4">Featured Cars</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {cars?.map((car) => (
-            <div key={car.id} className="car-card p-4 border rounded">
-              <img
-                src={car.photoUrl}
-                alt={car.name}
-                className="w-full h-32 object-cover mb-4"
-              />
-              <h3 className="text-xl font-semibold">{car.name}</h3>
-              <p>{car.description}</p>
-              <p className="font-bold">${car.price}</p>
-              <Link to={`/car/${car.id}`} className="text-blue-500">
-                View Details
-              </Link>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-screen-xl mx-auto">
+          {cars?.map((car: { _id: React.Key | null | undefined }) => (
+            <Features car={car} key={car._id}></Features>
           ))}
         </div>
       </section>

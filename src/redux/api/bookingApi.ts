@@ -10,6 +10,7 @@ const bookingApi = baseApi.injectEndpoints({
         params: args,
       }),
     }),
+
     // Get booking details by ID
     getBookingById: builder.query<Booking, number>({
       query: (bookingId) => `/bookings/${bookingId}`,

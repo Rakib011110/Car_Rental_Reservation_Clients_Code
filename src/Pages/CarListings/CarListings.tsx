@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGetAllCarsQuery } from "../../redux/api/carApi";
 import { Link } from "react-router-dom";
 import { ArrowBigDown, ArrowRight, ChevronRight, Heart } from "lucide-react";
+import Button from "../../Utils/Button";
 const CarListings = () => {
   const { data: cars, isLoading } = useGetAllCarsQuery({});
+  const [selectedCar, setSelectedCar] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleViewDetails = (car) => {
+    setSelectedCar(car);
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+    setSelectedCar(null);
+  };
 
   console.log(cars);
   if (isLoading) {
@@ -11,12 +24,12 @@ const CarListings = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-screen-2xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1 max-w-screen-xl mx-auto">
       {cars?.map((car) => (
         <div
           key={car.id}
-          className="w-[90%] h-[480px] group mx-auto dark:bg-[#252525] p-2 bg-white dark:border-0 border overflow-hidden rounded-md dark:text-white text-black">
-          <figure className="w-full h-80 group-hover:h-72 transition-all duration-300 dark:bg-[#0a121a] bg-[#f0f5fa] p-2 rounded-md relative overflow-hidden">
+          className="w-[95%] h-[466px] group mx-auto dark:bg-[#11065a] p-2 bg-white dark:border-0 border overflow-hidden rounded-md dark:text-white text-black">
+          <figure className="w-full h-72 group-hover:h-64 transition-all duration-300 dark:bg-[#0a121a] bg-[#f0f5fa] p-2 rounded-md relative overflow-hidden">
             <div
               style={{
                 background:
@@ -26,18 +39,23 @@ const CarListings = () => {
             <img
               src={car.photoUrl}
               alt={car.name}
-              className="absolute -bottom-1 group-hover:-bottom-5 right-0 h-64 w-[80%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300"
+              className="absolute -bottom-1 group-hover:-bottom-7 right-0 h-full w-[93%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300"
             />
           </figure>
           <article className="p-4 space-y-2">
-            <div className="h-8 w-20 bg-[#4393fc] rounded-md"></div>
-            <h1 className="text-xl font-semibold capitalize">{car.name}</h1>
+            <div className="h-8 w-20 text-center bg-[#1227e9] rounded-md">
+              {" "}
+              <p className="font-bold">Price ${car.pricePerHour}</p>
+            </div>
+            <h1 className="text-xl text-[#67ff38] font-semibold capitalize">
+              {car.name}
+            </h1>
             <p className="text-base leading-[120%]">{car.description}</p>
-            <p className="font-bold">Price Per Hour: $ {car.pricePerHour}</p>
+
             <Link
               to={`/cars/${car._id}`}
-              className="text-base dark:text-white text-blue-600 font-normal group-hover:opacity-100 opacity-0 translate-y-2 group-hover:translate-y-0 pt-2 flex gap-1 transition-all duration-300">
-              View Details
+              className="text-base dark:text-white text-blue-600 font-normal group-hover:opacity-100 opacity-0 translate-y-2 group-hover:translate-y-0 pt-2 mb-10 flex gap-1 transition-all duration-300">
+              <Button children1={"View Details"} children2={"View Details"} />
               <span>
                 <ChevronRight />
               </span>

@@ -50,6 +50,9 @@ const Navbar = () => {
               <li>
                 <Link to="/carListing">Car Listings</Link>
               </li>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl font-bold  text-white">
@@ -73,6 +76,11 @@ const Navbar = () => {
             <li>
               <Link to="/carListing">
                 <Button children1={"Car Listings"} children2={"Click"} />
+              </Link>
+            </li>
+            <li>
+              <Link to="/dashboard">
+                <Button children1={"Dashboard"} children2={"Click"} />
               </Link>
             </li>
           </ul>

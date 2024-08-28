@@ -6,6 +6,9 @@ import SignUp from "../components/Auth/SignUp";
 import SignIn from "../components/Auth/SignIn";
 import CarListings from "../Pages/CarListings/CarListings";
 import CarDetailsPage from "../Pages/CarDetails/CarDetailsPage";
+import ProtectedRoute from "../components/Auth/ProtectedRoute";
+import BookingPage from "../Pages/Booking/Booking";
+import Dashboard from "../layouts/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +36,15 @@ const router = createBrowserRouter([
         path: "/cars/:id",
         element: <CarDetailsPage />,
       },
+      {
+        path: "/booking/:id",
+        element: <BookingPage />,
+      },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
 ]);
 
