@@ -3,8 +3,9 @@ import Button from "../../Utils/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@reduxjs/toolkit/query";
-import { clearUser } from "../../redux/api/authSlice";
+// import { clearUser } from "../../redux/api/authSlice";
 import carLogo from "../../assets/images/car-logo.png";
+import { logout } from "../../redux/api/authSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Navbar = () => {
   const user = useSelector((state: RootState) => state.auth.user);
   console.log(user);
   const handleLogout = () => {
-    dispatch(clearUser());
+    dispatch(logout());
     navigate("/");
   };
   return (

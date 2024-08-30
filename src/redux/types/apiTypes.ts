@@ -11,24 +11,29 @@ export type TResponseRedux = {
   map?: any;
 };
 
-export type Car = {
+export interface Car {
   _id: string;
   name: string;
   description: string;
+  model: string;
+  year: string;
   color: string;
   isElectric: boolean;
-  status: string;
-  features: string[];
+  status: "available" | "unavailable";
+  features: string;
+  pricePerHour: string;
   photoUrl: string;
-  pricePerHour: number;
-  isDeleted: boolean;
-};
-
-export type User = {
-  id: number;
+}
+export interface User {
+  _id: string;
+  id: string;
   name: string;
   email: string;
-};
+  role: "user" | "admin";
+  password?: string;
+  phone: string;
+  address: string;
+}
 
 export type Booking = {
   id: number;

@@ -1,5 +1,3 @@
-// src/pages/SignIn.tsx
-
 import React from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
@@ -19,13 +17,11 @@ const SignIn: React.FC = () => {
   const [loginUser] = useLoginUserMutation();
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
     try {
       const response = await loginUser(data).unwrap();
       dispatch(setUser({ user: response.data, token: response.token }));
       toast.success("Logged in successfully!");
       navigate(`/`);
-      // navigate(`/${response.data.role}/dashboard`);
     } catch (error) {
       toast.error("Invalid credentials. Please try again.");
     }
