@@ -6,7 +6,7 @@ const bookingApi = baseApi.injectEndpoints({
     // Get all bookings
     getAllBookings: builder.query<TResponseRedux, TQueryParam>({
       query: (args) => {
-        const token = localStorage.getItem("authToken"); // Retrieve the token from localStorage
+        const token = localStorage.getItem("authToken");
         return {
           url: `/bookings/my-bookings`,
           params: args,
@@ -18,7 +18,7 @@ const bookingApi = baseApi.injectEndpoints({
     }),
     getAllUsersBookings: builder.query<TResponseRedux, TQueryParam>({
       query: (args) => {
-        const token = localStorage.getItem("authToken"); // Retrieve the token from localStorage
+        const token = localStorage.getItem("authToken");
         return {
           url: `/bookings`,
           params: args,
@@ -91,12 +91,12 @@ const bookingApi = baseApi.injectEndpoints({
     // Delete a booking
     deleteBooking: builder.mutation<{ success: boolean; id: number }, number>({
       query: (bookingId) => {
-        const token = localStorage.getItem("authToken"); // Retrieve the token from localStorage
+        const token = localStorage.getItem("authToken");
         return {
           url: `/bookings/${bookingId}`,
           method: "DELETE",
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         };
       },

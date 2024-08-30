@@ -10,7 +10,7 @@ const carApi = baseApi.injectEndpoints({
           url: `/cars`,
           params: args,
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         };
       },
@@ -21,7 +21,7 @@ const carApi = baseApi.injectEndpoints({
         return {
           url: `/cars/${carId}`,
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         };
       },
@@ -34,7 +34,7 @@ const carApi = baseApi.injectEndpoints({
           method: "POST",
           body: newCar,
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         };
       },
@@ -47,7 +47,7 @@ const carApi = baseApi.injectEndpoints({
           method: "PUT",
           body: rest,
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         };
       },
@@ -59,7 +59,7 @@ const carApi = baseApi.injectEndpoints({
           url: `/cars/${carId}`,
           method: "DELETE",
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         };
       },

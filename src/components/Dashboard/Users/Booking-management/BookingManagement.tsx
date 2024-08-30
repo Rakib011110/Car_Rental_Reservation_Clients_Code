@@ -18,7 +18,6 @@ const BookingManagement: React.FC = () => {
   const [selectedBooking, setSelectedBooking] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  // Fetch all bookings made by the user
   const {
     data: bookingData,
     refetch: refetchBookings,
@@ -31,7 +30,7 @@ const BookingManagement: React.FC = () => {
 
   const handleModifyBooking = (bookingId: number) => {
     setSelectedBooking(bookingId);
-    setIsModalOpen(true); // Open the modal for modifying the booking
+    setIsModalOpen(true);
   };
 
   const handleCancelBooking = async (bookingId: number) => {

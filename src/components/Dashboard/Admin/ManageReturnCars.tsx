@@ -49,10 +49,10 @@ const ManageReturnCars: React.FC = () => {
       }
 
       refetch();
-      setReturnBookingId(null); // Reset return modal state
-      setEndTime(""); // Reset endTime input
+      setReturnBookingId(null);
+      setEndTime("");
     } catch (err: any) {
-      console.error("Error returning car:", err); // Debugging: Log error details
+      console.error("Error returning car:", err);
       const errorMessage =
         err?.data?.message || "Failed to return car. Please try again.";
       toast.error(errorMessage);

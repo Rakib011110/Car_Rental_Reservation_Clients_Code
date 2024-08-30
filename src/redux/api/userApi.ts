@@ -11,9 +11,7 @@ const userApi = baseApi.injectEndpoints({
       }),
     }),
 
-    // Get user details by ID
     getUserById: builder.query<User, string>({
-      // Changed to string if IDs are strings
       query: (userId) => `/auth/${userId}`,
     }),
 
@@ -35,14 +33,13 @@ const userApi = baseApi.injectEndpoints({
           method: "PUT",
           body: rest,
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         };
       },
     }),
     // Delete a user
     deleteUser: builder.mutation<{ success: boolean; id: string }, string>({
-      // Changed to string if IDs are strings
       query: (userId) => ({
         url: `/auth/${userId}`,
         method: "DELETE",
@@ -62,7 +59,7 @@ export const {
   useAddUserMutation,
   useUpdateUserMutation,
   useDeleteUserMutation,
-  useGetUserIdByEmailQuery, // Add this line
+  useGetUserIdByEmailQuery,
 } = userApi;
 
 export default userApi;
