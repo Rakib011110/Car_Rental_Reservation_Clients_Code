@@ -19,6 +19,8 @@ import ManageCars from "../components/Dashboard/Admin/ManageCars";
 import BookingList from "../components/Dashboard/Users/Booking-management/BookingManagement";
 import PersonalInformation from "../components/Dashboard/Users/PersionalInfo/PersonalInformation";
 import DashboardOverview from "../components/Dashboard/Admin/AdminDashboard";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import ErrorPage from "../Utils/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
         path: "/booking/:id",
         element: <BookingPage />,
       },
+      {
+        path: "/aboutus",
+        element: <AboutUs />,
+      },
+      {
+        path: "*", // Catch-all route for 404 errors
+        element: <ErrorPage />,
+      },
     ],
   },
   {
@@ -68,6 +78,7 @@ const router = createBrowserRouter([
         path: "admin-booking-management",
         element: <ManageBookings />,
       },
+
       {
         path: "manage-return-cars",
         element: <ManageReturnCars />,

@@ -20,9 +20,7 @@ const ManageReturnCars: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   // Debugging: Console log to check API data fetching status
-  console.log("Bookings Dataaaaaaaa:", bookingData);
-  // console.log("Loading Status:", isLoading);
-  // console.log("Error Status:", isError, isError);
+  console.log("Bookings Data:", bookingData);
 
   const handleReturnCar = async (bookingId: string) => {
     if (!endTime) {
@@ -30,7 +28,7 @@ const ManageReturnCars: React.FC = () => {
       return;
     }
 
-    // Ensure the bookingId is valid before making the API call
+    // Ensure the bookingId is a valid ObjectId
     if (!bookingId || bookingId === "return") {
       toast.error("Invalid booking ID. Please try again.");
       return;
@@ -49,10 +47,10 @@ const ManageReturnCars: React.FC = () => {
       }
 
       refetch();
-      setReturnBookingId(null);
-      setEndTime("");
+      setReturnBookingId(null); // Reset return modal state
+      setEndTime(""); // Reset endTime input
     } catch (err: any) {
-      console.error("Error returning car:", err);
+      console.error("Error returning car:", err); // Debugging: Log error details
       const errorMessage =
         err?.data?.message || "Failed to return car. Please try again.";
       toast.error(errorMessage);
@@ -62,12 +60,12 @@ const ManageReturnCars: React.FC = () => {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>; // Show loading state
+    return <p>Loading...</p>;
   }
 
   if (isError || !bookingData?.data) {
-    console.error("Error loading bookings data:", isError); // Debugging: Log error details
-    return <p>Error loading bookings data. Please try again later.</p>; // Show error state
+    console.error("Error loading bookings data:", isError);
+    return <p>Error loading bookings data. Please try again later.</p>;
   }
 
   return (

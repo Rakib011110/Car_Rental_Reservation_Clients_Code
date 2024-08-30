@@ -2,10 +2,10 @@ import React from "react";
 import Button from "../../Utils/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@reduxjs/toolkit/query";
 // import { clearUser } from "../../redux/api/authSlice";
 import carLogo from "../../assets/images/car-logo.png";
 import { logout } from "../../redux/api/authSlice";
+import { RootState } from "../../redux/store/store";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -42,9 +42,7 @@ const Navbar = () => {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>
-                <Link to="/cars">Cars</Link>
-              </li>
+
               <li>
                 <Link to="/booking">Booking</Link>
               </li>
@@ -68,15 +66,15 @@ const Navbar = () => {
                 <Button children1={"Home"} children2={"Click"} />
               </Link>
             </li>
-            <li>
-              <Link to="/cars">
-                <Button children1={"Cars"} children2={"Click"} />
-              </Link>
-            </li>
 
             <li>
               <Link to="/carListing">
                 <Button children1={"Car Listings"} children2={"Click"} />
+              </Link>
+            </li>
+            <li>
+              <Link to="/aboutus">
+                <Button children1={"About Us"} children2={"Click"} />
               </Link>
             </li>
             <li>
@@ -90,7 +88,9 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <span className="mr-4">Hello, {user.name}</span>
+              <span className="mr-4 text-white font-bold">
+                Hello, {user.name}
+              </span>
               <button onClick={handleLogout} className="">
                 <Button children1={"Logout"} children2={"Click"} />
               </button>
@@ -101,10 +101,7 @@ const Navbar = () => {
             </button>
           )}
 
-          <Link to="/signup">
-            {" "}
-            {/* Show logout button only if user is logged in */}
-          </Link>
+          <Link to="/signup"> </Link>
         </div>
       </div>
     </div>

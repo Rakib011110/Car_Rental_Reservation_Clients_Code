@@ -14,6 +14,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Features from "./Features";
 import Logo from "../../Pages/Logo/Logo";
+import FeaturedCars from "./FeaturedCars";
+import Title from "../../Utils/Title";
 
 const Banner = () => {
   const [searchParams, setSearchParams] = useState({
@@ -151,10 +153,18 @@ const Banner = () => {
         </div>
       </div>
       <Logo />
-
-      <section className="featured-cars mb-8">
-        <h2 className="text-2xl font-bold mb-4">Featured Cars</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-screen-xl mx-auto">
+      <div>
+        <div className="mt-10 mb-10">
+          <Title
+            bigTitle="Find Your Perfect Ride"
+            smallTitle="Explore Our Top Featured Cars"
+          />
+          {/* Other components and content */}
+        </div>
+        <FeaturedCars />
+      </div>
+      <section className="featured-cars mt-10 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-screen-xl mx-auto">
           {cars?.map((car: { _id: React.Key | null | undefined }) => (
             <Features car={car} key={car._id}></Features>
           ))}
