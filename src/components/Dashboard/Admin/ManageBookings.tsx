@@ -55,8 +55,8 @@ const ManageBookings: React.FC = () => {
             <tbody>
               {bookingData?.data?.map((booking: any) => (
                 <tr key={booking._id} className="border-b">
-                  <td className="py-2 px-4">{booking.user.email}</td>
-                  <td className="py-2 px-4">{booking.user.name}</td>
+                  <td className="py-2 px-4">{booking?.user?.email}</td>
+                  <td className="py-2 px-4">{booking?.user?.name}</td>
                   <td className="py-2 px-4">{booking?.car?.name}</td>
                   <td className="py-2 px-4">
                     {new Date(booking.date).toLocaleDateString()}
