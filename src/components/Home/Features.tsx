@@ -8,7 +8,7 @@ const Features = ({ car }) => {
     <div>
       <div
         key={car.id}
-        className="w-[95%] h-[466px] group mx-auto dark:bg-[#11065a] p-2 bg-white dark:border-0 border overflow-hidden rounded-md dark:text-white text-black">
+        className="w-[98%] h-[466px] group mx-auto border-black  dark:bg-[#11065a] p-2 bg-white dark:border- border overflow-hidden rounded-md dark:text-white text-black">
         <figure className="w-full h-72 group-hover:h-64 transition-all duration-300 dark:bg-[#0a121a] bg-[#f0f5fa] p-2 rounded-md relative overflow-hidden">
           <div
             style={{
@@ -19,7 +19,7 @@ const Features = ({ car }) => {
           <img
             src={car.photoUrl}
             alt={car.name}
-            className="absolute -bottom-1 group-hover:-bottom-7 right-0 h-full w-[93%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300"
+            className="absolute -bottom-1 group-hover:-bottom-7 right-0 h-full w-[98%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300"
           />
         </figure>
         <article className="p-4 space-y-2">

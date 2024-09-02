@@ -14,7 +14,7 @@ const PersonalInformation: React.FC = () => {
   // Fetch all bookings made by the user
   const { data: bookingData, isFetching, error } = useGetAllBookingsQuery({});
   const [updateUser] = useUpdateUserMutation();
-
+  console.log(bookingData);
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -82,8 +82,14 @@ const PersonalInformation: React.FC = () => {
                   <td className="py-3 px-4">{booking.status}</td>
                   <td className="py-3 px-4">{booking.pickUpDate}</td>
                   <td className="py-3 px-4">{booking.startTime}</td>
-                  <td className="py-3 px-4">{booking.bookingTime}</td>
-                  <td className="py-3 px-4">${booking.totalCost}</td>
+                  <td className="py-3 px-4">
+                    {new Date(booking.updatedAt).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </td>
+                  <td className="py-3 px-4">$ {booking.car.pricePerHour}</td>
                 </tr>
               ))}
             </tbody>

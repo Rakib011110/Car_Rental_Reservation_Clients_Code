@@ -1,12 +1,17 @@
 import React from "react";
 import Navbar from "../Pages/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
+import Footer from "../Pages/Shared/Footer";
+import { ThemeProvider } from "../Utils/ThemeContext";
 
 const Mainlayouts = () => {
   return (
     <div>
-      <Navbar />
+      <ThemeProvider>
+        <Navbar />
+      </ThemeProvider>
       <Outlet />
+      <Footer />
     </div>
   );
 };

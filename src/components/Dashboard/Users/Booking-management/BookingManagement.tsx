@@ -24,7 +24,6 @@ const BookingManagement: React.FC = () => {
     isFetching,
     error,
   } = useGetAllBookingsQuery({});
-
   const [updateBooking] = useUpdateBookingMutation();
   const [deleteBooking] = useDeleteBookingMutation();
 
@@ -82,13 +81,13 @@ const BookingManagement: React.FC = () => {
                   <button
                     onClick={() => handleModifyBooking(booking._id)}
                     className=" text-white py-2 px-4 rounded-lg hover:bg-blue-600 disabled:opacity-50"
-                    disabled={booking.status !== "approved"}>
+                    disabled={booking.status !== "approve"}>
                     <Button children1={"Modify"} children2={"click"} />
                   </button>
                   <button
                     onClick={() => handleCancelBooking(booking._id)}
                     className=" text-white py-2 px-4 rounded-lg hover:bg-red-600 disabled:opacity-50"
-                    disabled={booking.status !== "approved"}>
+                    disabled={booking.status !== "pending"}>
                     <Button children1={"Cancel"} children2={"click"} />
                   </button>
                 </div>

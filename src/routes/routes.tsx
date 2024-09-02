@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/booking/:id",
-        element: <BookingPage />,
+        element: <ProtectedRoute component={BookingPage} />,
       },
       {
         path: "/aboutus",
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <ProtectedRoute component={Dashboard} />,
     children: [
       {
         path: "admin-dashboard",

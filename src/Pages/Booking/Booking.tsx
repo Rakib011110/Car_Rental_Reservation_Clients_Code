@@ -65,114 +65,129 @@ const BookingPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="max-w-screen-sm mx-auto p-8 bg-white rounded-lg shadow-md mb-64 mt-20 border border-gray-200">
       {car ? (
         <>
-          <h1 className="text-2xl font-bold mb-4">Booking for {car.name}</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block text-gray-700">Date</label>
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
+            Booking for {car.name}
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="mb-6">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Date
+              </label>
               <input
                 type="date"
                 name="date"
-                className="border border-gray-300 p-2 w-full"
+                className="border border-gray-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                 value={bookingDetails.date}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Start Time</label>
+            <div className="mb-6">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Start Time
+              </label>
               <input
                 type="time"
                 name="startTime"
-                className="border border-gray-300 p-2 w-full"
+                className="border border-gray-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                 value={bookingDetails.startTime}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">End Time</label>
+            <div className="mb-6">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                End Time
+              </label>
               <input
                 type="time"
                 name="endTime"
-                className="border border-gray-300 p-2 w-full"
+                className="border border-gray-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                 value={bookingDetails.endTime}
                 onChange={handleInputChange}
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Full Name</label>
+            <div className="mb-6">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Full Name
+              </label>
               <input
                 type="text"
                 name="fullName"
-                className="border border-gray-300 p-2 w-full"
+                className="border border-gray-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                 value={bookingDetails.fullName}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">NID/Passport</label>
+            <div className="mb-6">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                NID/Passport
+              </label>
               <input
                 type="text"
                 name="nidOrPassport"
-                className="border border-gray-300 p-2 w-full"
+                className="border border-gray-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                 value={bookingDetails.nidOrPassport}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Driving License</label>
+            <div className="mb-6">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Driving License
+              </label>
               <input
                 type="text"
                 name="drivingLicense"
-                className="border border-gray-300 p-2 w-full"
+                className="border border-gray-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                 value={bookingDetails.drivingLicense}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Pick-up Date</label>
+            <div className="mb-6">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Pick-up Date
+              </label>
               <input
                 type="date"
                 name="pickUpDate"
-                className="border border-gray-300 p-2 w-full"
+                className="border border-gray-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                 value={bookingDetails.pickUpDate}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <div className="mb-4">
-              <label>
+            <div className="mb-6 flex items-center">
+              <label className="text-lg font-medium text-gray-700 mr-4">
                 <input
                   type="checkbox"
                   name="insurance"
+                  className="mr-2 leading-tight"
                   checked={bookingDetails.insurance}
                   onChange={handleInputChange}
                 />
                 Insurance
               </label>
-            </div>
-            <div className="mb-4">
-              <label>
+              <label className="text-lg font-medium text-gray-700 mr-4">
                 <input
                   type="checkbox"
                   name="gps"
+                  className="mr-2 leading-tight"
                   checked={bookingDetails.gps}
                   onChange={handleInputChange}
                 />
                 GPS
               </label>
-            </div>
-            <div className="mb-4">
-              <label>
+              <label className="text-lg font-medium text-gray-700">
                 <input
                   type="checkbox"
                   name="childSeat"
+                  className="mr-2 leading-tight"
                   checked={bookingDetails.childSeat}
                   onChange={handleInputChange}
                 />
@@ -181,14 +196,14 @@ const BookingPage: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="p-2 bg-green-500 text-white rounded">
+              className="w-full bg-gradient-to-r from-[#050d31] to-[#091583] text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:from-blue-500 hover:to-blue-700 transition duration-200 transform hover:scale-105">
               Confirm Booking
             </button>
             <ToastContainer />
           </form>
         </>
       ) : (
-        <p>Car not found for booking.</p>
+        <p className="text-center text-gray-700">Car not found for booking.</p>
       )}
     </div>
   );

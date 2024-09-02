@@ -11,7 +11,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.auth.user);
-  console.log(user);
   const handleLogout = () => {
     dispatch(logout());
     navigate("/");
@@ -49,6 +48,7 @@ const Navbar = () => {
               <li>
                 <Link to="/carListing">Car Listings</Link>
               </li>
+
               <li>
                 <Link to="/dashboard">Dashboard</Link>
               </li>
@@ -77,12 +77,28 @@ const Navbar = () => {
                 <Button children1={"About Us"} children2={"Click"} />
               </Link>
             </li>
-            <li>
-              <Link to="/dashboard">
-                <Button children1={"Dashboard"} children2={"Click"} />
-              </Link>
-            </li>
+            {user?.role === "user" ? (
+              <li>
+                <Link to="/dashboard/user-persional-info">
+                  <Button children1={"Dashboard"} children2={"Click"} />
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link to="/dashboard">
+                  {" "}
+                  <Button children1={"Dashboard"} children2={"Click"} />
+                </Link>
+              </li>
+            )}
           </ul>
+          <div>
+            <input
+              type="checkbox"
+              className="toggle toggle-error"
+              defaultChecked
+            />
+          </div>
         </div>
 
         <div className="navbar-end">

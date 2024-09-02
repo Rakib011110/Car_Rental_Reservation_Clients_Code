@@ -5,6 +5,7 @@ import { useForm, FieldValues } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useRegisterUserMutation } from "../../redux/api/authApi";
+import Title from "../../Utils/Title";
 
 const SignUp: React.FC = () => {
   const {
@@ -31,7 +32,10 @@ const SignUp: React.FC = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white p-6 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+        <h2 className="text-2xl font-bold mb-4">
+          {" "}
+          <Title bigTitle={"Sign Up"} smallTitle={""} />{" "}
+        </h2>
 
         {/* Name Field */}
         <div className="mb-4">
@@ -121,7 +125,7 @@ const SignUp: React.FC = () => {
         {/* Sign Up Button */}
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
+          className="bg-gradient-to-r from-[#050d31] to-[#091583] text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
           disabled={isLoading}>
           {isLoading ? "Signing Up..." : "Sign Up"}
         </button>
@@ -130,7 +134,7 @@ const SignUp: React.FC = () => {
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-700">
             Already have an account?{" "}
-            <a href="/signin" className="text-blue-500 hover:underline">
+            <a href="/login" className="text-blue-500 hover:underline">
               Sign In Instead
             </a>
           </p>

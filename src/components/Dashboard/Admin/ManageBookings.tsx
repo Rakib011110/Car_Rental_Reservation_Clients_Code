@@ -65,10 +65,10 @@ const ManageBookings: React.FC = () => {
                   <td className="py-2 px-4">
                     <button
                       onClick={() =>
-                        handleUpdateBookingStatus(booking._id, "approved")
+                        handleUpdateBookingStatus(booking._id, "approve")
                       }
                       className="bg-blue-500 text-white py-1 px-4 rounded mr-2"
-                      disabled={booking.status === "approved"}>
+                      disabled={booking.status === "approve"}>
                       Approve
                     </button>
                     <button

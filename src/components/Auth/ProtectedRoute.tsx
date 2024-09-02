@@ -1,18 +1,21 @@
-import { RootState } from "@reduxjs/toolkit/query";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { RootState } from "../../redux/store/store";
 
 interface ProtectedRouteProps {
   component: React.ComponentType;
+  roles?: string[];
 }
 
-const ProtectedRoute = ({ component: Component }) => {
-  const isAuthenticated = useSelector(
-    (state: RootState) => state.auth.isAuthenticated
-  );
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
+  component: Component,
+  roles,
+}) => {
+  const { user } = useSelector((state: RootState) => state.auth);
 
-  if (!isAuthenticated) {
+  if (!user) {
+    // Redirect to login if user is not authenticated
     return <Navigate to="/login" />;
   }
 
