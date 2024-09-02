@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useGetCarByIdQuery } from "../../redux/api/carApi";
 import { FaStar } from "react-icons/fa";
+import Button from "../../Utils/Button";
 
 const CarDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,7 +20,7 @@ const CarDetailsPage: React.FC = () => {
   if (error) return <p>Error loading car details.</p>;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mb-28 mt-24">
       {car ? (
         <>
           <div className="flex flex-col md:flex-row gap-4">
@@ -28,13 +29,13 @@ const CarDetailsPage: React.FC = () => {
               <img
                 src={car.photoUrl}
                 alt={car.name}
-                className={`w-full h-60 object-cover mb-4 ${
+                className={`w-full h-full object-cover p-5 mb-4 ${
                   zoom ? "cursor-zoom-out" : "cursor-zoom-in"
                 }`}
                 onClick={() => setZoom(!zoom)}
               />
               {zoom && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+                <div className="fixed  inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                   <img
                     src={car.photoUrl}
                     alt={car.name}
@@ -85,9 +86,9 @@ const CarDetailsPage: React.FC = () => {
 
               {/* Book Now Button */}
               <button
-                className="p-2 bg-blue-500 text-white rounded"
+                className="p-2  text-white rounded"
                 onClick={handleBookNow}>
-                Book Now
+                <Button children1={"Book Now"} children2={"Click"} />
               </button>
             </div>
           </div>
